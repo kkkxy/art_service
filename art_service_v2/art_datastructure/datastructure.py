@@ -9,11 +9,31 @@ from shapely.geometry import Point, LineString, Polygon
 from treelib import Tree, Node
 
 
-class GlobalTree():
+class GlobalTree:
 
     def __init__(self, tree=None, data_objects=None):
         self.tree = tree
         self.data_objects = data_objects
+
+    # # 添加object
+    # def add_object(self, one_object: DataObject, level):
+    #     if self.tree.depth > 1:
+    #         pass
+    #
+    # # 删除object
+    # def delete_object(self, object_index: int):
+    #     if tree.contains(object_index):
+    #         tree.remove_node(object_index)
+    #
+    #
+    # def insert_object(self, object_index: int, position):
+    #
+    #
+    # def replace_object(self, one_object: DataObject, position):
+    #
+    #
+    # def move_object_to_another_tree_position(self, position):
+
 
 
 @dataclass(order=True, unsafe_hash=True)
@@ -46,7 +66,7 @@ class DataObject:
     id: str = field(default_factory=uuid1)  # 物件ID
     index: int = field(default=0)  # 組索引
     name: str = field(default=None)  # 编组名字
-    global_tree: GlobalTree = field(default=None) # 全局树
+    global_tree: GlobalTree = field(default_factory=GlobalTree) # 全局树
     # tree: Tree = field(default_factory=Tree) # 关系树
     floor: int = field(default=0)  # 层数
     height: float = field(default=0.0)  # 高度
@@ -57,24 +77,41 @@ class DataObject:
 
     @property
     def tree(self):
-        if isinstance(self.global_tree, GlobalTree):
+        if self.global_tree.tree.depth() > 1 and self.index in self.global_tree.tree.nodes:
             return self.global_tree.tree.subtree(self.index)
         else:
             return None
 
-    def add_element(self):
+    # 所有DataElement
+    def all_elements(self) -> List[DataElement]:
+        elements = []
+        object_indexes = self.tree.all_nodes()
+        for index in object_indexes:
+            elements.extend(self.global_tree.data_objects[index].elements)
+        return elements
 
-    def delete_element(self):
+    # 所有DataObject
+    def all_objects(self) -> List[DataElement]:
+        objects = []
+        object_indexes = self.tree.all_nodes()
+        for index in object_indexes:
+            objects.extend(self.global_tree.data_objects[index])
+        return objects
 
-    def add_object(self, position):
+    # 添加element
+    def add_element(self, element: DataElement):
+        if isinstance(element, DataElement) and element.geometry is not None:
+            self.elements.append(element)
+        else:
+            raise Exception("物件中没有输入的元素ID")
 
-    def delete_object(self, position):
-
-    def move_object_to_another_tree_position(self, position):
-
-
-
-
+    # 删除element
+    def delete_element(self, element_id: str):
+        if element_id in [item.id for item in self.elements]:
+            index = max(self.elements, key=lambda x: x.id == element_id)
+            self.elements.pop(index)
+        else:
+            raise Exception("物件中没有输入的元素ID")
 
 def assemble_tree(data_elements:List[DataElement], data_objects:dict):
     """
