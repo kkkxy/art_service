@@ -125,18 +125,53 @@ class DataTemplate:
             each.global_tree = self.tree
         return self
 
+    # # 查找指定物件
+    # def find_object(self, arg: int or str):
+    #     target_object = None
+    #     if isinstance(arg, int):
+    #         search_object = max(self.data_objects, key=lambda x: x.index == arg)  # 这里还需要需要修改一下！！！
+    #         if search_object.index == arg:
+    #             target_object = search_object
+    #     elif isinstance(arg, str):
+    #         search_object = max(self.data_objects, key=lambda x: x.name == arg)  # 这里还需要需要修改一下！！！
+    #         if search_object.name == arg:
+    #             target_object = search_object
+    #
+    #     if target_object is None:
+    #         print("没有找到任何信息为{}的物件".format(arg))
+    #     return target_object
+
     # 查找指定物件
     def find_object(self, arg):
         if isinstance(arg, int):
-            target_object = max(self.data_objects, key=lambda x: x.index == arg)  # 这里还需要需要修改一下！！！
-            print("找到物件index, 物件{}".format(arg))
+            target = self.tree.expand_tree(filter=lambda x: x.identifier == arg)  # 这里还需要需要修改一下！！！
+            for i in target:
+                target_object = i
+            print("找到物件index, 物件{}".format(target_object))
         elif isinstance(arg, str):
-            target_object = max(self.data_objects, key=lambda x: x.name == arg)  # 这里还需要需要修改一下！！！
-            print("找到物件name, 物件{}".format(target_object.index))
+            print(self.tree)
+            target = self.tree.expand_tree(filter=lambda x: x.data.name == arg)  # 这里还需要需要修改一下！！！
+            for i in target:
+                target_object = i
+            print("找到物件name, 物件{}".format(target_object))
         else:
             target_object = None
             print("没有找到任何信息为{}的物件".format(arg))
         return target_object
+
+    # # 查找指定物件
+    # def find_object(self, arg):
+    #     if isinstance(arg, int):
+    #         target_object = max(self.data_objects, key=lambda x: x.index == arg)  # 这里还需要需要修改一下！！！
+    #         print("找到物件index, 物件{}".format(arg))
+    #     elif isinstance(arg, str):
+    #         target_object = max(self.data_objects, key=lambda x: x.name == arg)  # 这里还需要需要修改一下！！！
+    #         print("找到物件name, 物件{}".format(target_object.index))
+    #     else:
+    #         target_object = None
+    #         print("没有找到任何信息为{}的物件".format(arg))
+    #     return target_object
+
 
     # # 条件筛选object，需要修改
     # def filter_object(self, tree: Tree,  args):

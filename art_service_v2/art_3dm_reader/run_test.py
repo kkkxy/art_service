@@ -39,8 +39,7 @@ test_object = template.find_object(23)  # 输入物件index查询
 # 2. 增删物件
 template.add_object(new_object1, 21)  # 在指定物件下面添加一个子物件
 template.delete_object(15)  # 删除指定objects - by index
-template.delete_object(15)
-template.delete_object('写字楼2')  # 删除指定objects - by id
+template.delete_object('写字楼2')  # 删除指定object - by id
 template.insert_object(new_object2, 21, 20)  # 在指定两个物件中间插入一个物件
 
 

@@ -134,8 +134,8 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.run_test (1)" />
-        <item itemvalue="Python.run_test" />
         <item itemvalue="Python.data_structure" />
+        <item itemvalue="Python.run_test" />
         <item itemvalue="Python.rhino_file_reader" />
       </list>
     </recent_temporary>
@@ -161,27 +161,32 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1920" height="1024" key="GridCell.Tab.0.bottom" timestamp="1608807293109">
+    <state width="1920" height="1024" key="GridCell.Tab.0.bottom" timestamp="1608865272755">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1920" height="1024" key="GridCell.Tab.0.bottom/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1608807293109" />
-    <state width="1920" height="1024" key="GridCell.Tab.0.center" timestamp="1608807293108">
+    <state width="1920" height="1024" key="GridCell.Tab.0.bottom/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1608865272755" />
+    <state width="1920" height="1024" key="GridCell.Tab.0.center" timestamp="1608865272755">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1920" height="1024" key="GridCell.Tab.0.center/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1608807293108" />
-    <state width="1920" height="1024" key="GridCell.Tab.0.left" timestamp="1608807293108">
+    <state width="1920" height="1024" key="GridCell.Tab.0.center/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1608865272755" />
+    <state width="1920" height="1024" key="GridCell.Tab.0.left" timestamp="1608865272755">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1920" height="1024" key="GridCell.Tab.0.left/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1608807293108" />
-    <state width="1920" height="1024" key="GridCell.Tab.0.right" timestamp="1608807293109">
+    <state width="1920" height="1024" key="GridCell.Tab.0.left/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1608865272755" />
+    <state width="1920" height="1024" key="GridCell.Tab.0.right" timestamp="1608865272755">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1920" height="1024" key="GridCell.Tab.0.right/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1608807293109" />
+    <state width="1920" height="1024" key="GridCell.Tab.0.right/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1608865272755" />
     <state x="461" y="184" key="SettingsEditor" timestamp="1608779586801">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="461" y="184" key="SettingsEditor/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1608779586801" />
+    <state x="2041" y="118" width="1736" height="887" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1608864948917">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state x="2041" y="118" width="1736" height="887" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1608864948917" />
   </component>
 </project>
